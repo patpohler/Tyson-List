@@ -2,23 +2,30 @@
 
 /*
 =====================================================
-Talon Net Seller's Calculator
+Tyson List
 -----------------------------------------------------
  http://www.anecka.com/
 -----------------------------------------------------
- Copyright (c) 2012 Patrick Pohler
 =====================================================
- This software is based upon and derived from
- ExpressionEngine software protected under
- copyright dated 2004 - 2012. Please see
- http://expressionengine.com/docs/license.html
+Copyright (c) 2012 Patrick Pohler
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 =====================================================
- File: mod.talon_snp.php
+ File: mod.tyson_list.php
 -----------------------------------------------------
  Dependencies: 
 -----------------------------------------------------
- Purpose: Custom module for the Net Seller Proceed's Calculator on 
-TalonTitle.net
+ Purpose: 
 =====================================================
 */
 
