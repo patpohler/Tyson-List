@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TysonList Test</title>
+	<script type="text/javascript" src="{site_url}themes/third_party/tyson_list/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="{site_url}themes/third_party/tyson_list/js/knockout-2.1.0.debug.js"></script>
+	<script type="text/javascript" src="{site_url}themes/third_party/tyson_list/js/knockout.mapping-latest.debug.js"></script>
+	<link href="{site_url}themes/third_party/tyson_list/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span12">TysonList Test</div>
+		</div>
+		<!-- saved lists -->
+		<div class="row">
+			<ul class="nav nav-pills" data-bind="foreach: taskLists">
+				<li data-bind="css:{active: $data.listName == $root.chosenListName() }">
+					<a href="#" data-bind="text:$data.listName,click: $root.goToList"></a></li>
+			</ul>
+		</div>
+		<!-- list detail -->
+		<div class="row" data-bind="with:chosenList">
+			<form>
+			<div class="row">
+				<h3>List Name:</h3>
+					<div class="span5" data-bind="if:editMode() == false">
+						<span class="span4" data-bind="text:listName"></span><a href="#" data-bind="click:$parent.enableEdit">Edit</a>
+					</div>
+					<div class="span5" data-bind="if:editMode() == true">
+						<input class="input4" type="text" data-bind="value:listName" /><a href="#" data-bind="click:$parent.finishEdit">Done Editing</a>
+					</div>
+			</div>
+			<h3 class="row">Tasks</h3>
+			<!-- list items -->
+			<div class="row" data-bind="foreach:taskItems">
+				<div class="span12">
+					<label class="checkbox span4">
+						<input type="checkbox" name="isComplete" data-bind="checked:$data.isComplete" />
+						<span data-bind="text:$data.taskName, visible:$data.editMode() == false"></span>
+					</label>
+					<input type="text" data-bind="value:$data.taskName, visible:$data.editMode() == true" />
+					<a href="#" data-bind="click:$root.editTask, visible:$data.editMode() == false">Edit</a>
+					<a href="#" data-bind="click:$root.finishEditTask, visible:$data.editMode() == true">Done Editing</a>
+					<a href="#" data-bind="click:$root.removeTask">Remove</a>
+				</div>
+			</div>
+			<!-- /list items -->
+			<div class="row">
+				<div class="span12">
+					<input class="input6" data-bind="value:$parent.newTaskDetail" placeholder="Enter task details"/>
+					<button type="button" data-bind="click:$parent.newTaskItem" class="btn">Add New Task</a>
+				</div>
+			</div>
+			<!-- /list detail -->
+			</form>
+		</div>
+		<!-- new list form -->
+		<div class="row">
+			<div class="span6">
+				<button type="button" data-bind="click:newList" class="btn">New List</button>
+				<button type="button" data-bind="click:deleteList" class="btn">Delete List</button>
+				<button type="button" data-bind="click:saveLists" class="btn">Save List</button>
+			</div>
+		</div>
+		<!-- /new list form -->
+	</div>
+	<script type="text/javascript" src="{site_url}themes/third_party/tyson_list/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{site_url}themes/third_party/tyson_list/js/tysonlist-app.js"></script>
+</body>
+</html>
